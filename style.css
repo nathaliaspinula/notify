@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-areas: 'header header header'
+                         'section section section'
+                         'section2 section2 section2'
+                         'section3 section3 section3'
+                         'footer footer footer';
+    grid-template-rows: 84vh 20vh 30vh 40vh 10vh;
+}
+
+header {
+    grid-area: header;
+    background-image: url(imagens/banner.png);
+    display: flex;
+    justify-content: center;
+    border-top: 5px solid;
+    border-color: #2fd072;
+}
+
+header aside {
+    color: white;
+}
+
+header aside div h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 55pt;
+    font-weight: inherit;
+}
