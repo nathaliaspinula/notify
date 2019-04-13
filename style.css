@@ -1,12 +1,49 @@
+.circle { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -moz-border-radius: 50px; 
+    -webkit-border-radius: 50px; 
+    border-radius: 50px; 
+}
+
 body {
     margin: 0;
     display: grid;
-    grid-template-areas: 'header header header'
-                         'section section section'
-                         'section2 section2 section2'
-                         'section3 section3 section3'
-                         'footer footer footer';
-    grid-template-rows: 84vh 20vh 30vh 40vh 10vh;
+    grid-template-areas: 'header'
+                         'section'
+                         'section2 '
+                         'section3'
+                         'footer';
+    grid-template-rows: 84vh 51vh 30vh 40vh 10vh;
+    font-family: 'Lato', sans-serif;
+}
+
+body section:nth-child(2) {
+    grid-area: section;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff;
+}
+
+body section:nth-child(2) div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body section:nth-child(2) div div.circle {
+    width: 85px; 
+    height: 85px; 
+    background: #2fd072; 
+}
+
+body section:nth-child(3) {
+    grid-area: section2;
+    background-color: #e3e3e3;
 }
 
 header {
@@ -14,11 +51,11 @@ header {
     background-image: url(imagens/banner.png);
     display: flex;
     justify-content: center;
-    border-top: 5px solid;
+    border-top: 8px solid;
     border-color: #2fd072;
 }
 
-header aside {
+header aside:first-child {
     color: white;
 }
 
@@ -27,3 +64,31 @@ header aside div h1 {
     font-size: 55pt;
     font-weight: inherit;
 }
+
+header aside nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+header aside nav a {
+    width: 50px; 
+    height: 50px; 
+    background: #444444; 
+}
+
+header aside nav a:hover {
+    width: 50px; 
+    height: 50px; 
+    background: #2fd072; 
+}
+
+header aside:nth-child(2) {
+    display: flex;
+    align-items: flex-end;
+}
+
+header aside:nth-child(2) img {
+    width: 87%;
+}
+
+
