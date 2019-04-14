@@ -10,12 +10,13 @@
 body {
     margin: 0;
     display: grid;
-    grid-template-areas: 'header'
-                         'section'
-                         'section2 '
-                         'section3'
-                         'footer';
-    grid-template-rows: 84vh 51vh 70vh 40vh 10vh;
+    grid-template-areas: 'header header header'
+                         'section section section'
+                         'section2 section2 section2'
+                         'section3 section3 section3'
+                         'footer footer footer';
+    grid-template-rows: 83vh 45vh 57vh 63vh 18vh;
+    grid-template-columns: 34vw 34vw 31vw;
     font-family: 'Lato', sans-serif;
 }
 
@@ -55,6 +56,7 @@ body section:nth-child(3) aside div {
     margin-left: 169px;
     justify-content: space-around;
     flex-direction: column;
+    font-size: 15pt;
 }
     
 
@@ -71,6 +73,8 @@ body section:nth-child(3) aside div button {
     padding: 0;
     border-radius: 0px 10px 10px 0px;
     background-color: #2fd072;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 header {
@@ -80,21 +84,57 @@ header {
     justify-content: center;
     border-top: 8px solid;
     border-color: #2fd072;
+    grid-template-areas: 'logo' 'imagem';
+    grid-template-columns: 66.6vw 34vw;
+    grid-template-rows: 1511.98px;
 }
 
-header aside:first-child {
+header aside:first-child  {
+    grid-area: logo;
     color: white;
+    display: flex;
+    align-content: center;
+    justify-items: center;
 }
 
-header aside div h1 {
+header aside:first-child div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header aside div div h1 {
     font-family: 'Pacifico', cursive;
     font-size: 55pt;
     font-weight: inherit;
+    width: 105px;
+    margin-left: -77px;
+    margin-top: 129px;
+    margin-block-end: 32px;
+}
+
+header aside div div h1 span {
+    color: #2fd072;
+}
+
+header aside div div h2 {
+    font-family: Arial;
+    font-weight: lighter;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-size: 16.9pt;
+    width: 450px;
+    padding-left: 202px;
+    margin-left: 74px;
 }
 
 header aside nav {
+    height: 60px;
+    width: 178px;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12px;
 }
 
 header aside nav a {
