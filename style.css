@@ -10,12 +10,8 @@
 body {
     margin: 0;
     display: grid;
-    grid-template-areas: 'header'
-                        'section'
-                        'section2 '
-                        'section3'
-                        'footer';
-    grid-template-rows: 79vh 51vh 70vh 40vh 10vh;
+    grid-template-areas: 'header''section''section2 ''section3''footer';
+    grid-template-rows: 79vh 51vh 70vh 60vh 10vh;
     font-family: 'Lato', sans-serif;
 }
 
@@ -59,33 +55,37 @@ body section:nth-child(3) {
     flex-direction: row;
 }
 
-
-body section:nth-child(3) aside:first-child div {
-    width: 50%;
+body section:nth-child(3) aside:first-child div:first-child {
     margin-left: 169px;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     font-size: 15pt;
 }
-    
 
 body section:nth-child(3) aside:first-child div input {
-    border-radius: 5px;
-    width: 70%;
-    height: 40px;
-    padding: 5px;
+    width: 261px;
+    padding-left: 12px;
+    border: 0;
+    height: 51px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 12pt;
 }
 
-body section:nth-child(3) aside:first-child div button {
-    height: 52px;
-    width: 72px;
-    margin: -14px;
+body section:nth-child(3) aside:first-child div div button {
+    width: 112px;
+    height: 54px;
+    margin: -6px;
     padding: 0;
-    border-radius: 0px 10px 10px 0px;
+    border: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    font-family: arial;
     background-color: #2fd072;
+    font-size: 18px;
     font-weight: bold;
-    color: #ffffff;
 }
 
 body section:nth-child(3) aside:nth-child(2) div {
@@ -107,7 +107,43 @@ body section:nth-child(4) {
 }
 
 body section:nth-child(4) div {
-    margin: 0px 169px 0px 169px; 
+    margin: 0px 225px 0px 225px;
+}
+
+body section:nth-child(4) div p{
+    color:grey;
+    text-align: center;
+}
+
+body section:nth-child(4) div:first-child p{
+    font-style: italic;
+}
+
+
+body section:nth-child(4) div:last-child nav,
+body section:nth-child(4) div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+
+body section:nth-child(4) div:last-child nav a.circle {
+    width: 35px; 
+    height: 35px; 
+    margin: 6px;
+    background-color: #e3e3e3;
+}
+
+body section:nth-child(4) div:last-child nav a img {
+    width: 20px;
+}
+
+body section:nth-child(4) div:nth-child(2) a img {
+    width: 70px;
+    margin: 8px
+}
+
+body section:nth-child(4) div:last-child nav a:hover{
+    background-color: #2fd072;
 }
 
 footer {
@@ -150,24 +186,25 @@ header aside:first-child  {
     justify-items: center;
 }
 
-header aside div:first-child {
+header aside:first-child div:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: -60px;
 }
 
-header aside:first-child div div{
+header aside:first-child div div {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-header aside:first-child div div:nth-child(2){
+header aside:first-child div div:nth-child(2) {
     width: 85%;
 }
 
-header aside div div h1 {
+header aside:first-child div div:first-child h1 {
     font-family: 'Pacifico', cursive;
     font-size: 36pt;
     font-weight: inherit;
@@ -176,45 +213,63 @@ header aside div div h1 {
     margin-block-end: 32px;
 }
 
-header aside div div h1 span {
+header aside:first-child div div:first-child h1 span {
     color: #2fd072;
 }
 
-header aside div div h2 {
+header aside:first-child div div:nth-child(2) h2 {
     font-family: Arial;
     font-weight: lighter;
-    margin-block-end: 0;
-    margin-block-start: 0;
-    font-size: 16.9pt;
+    font-size: 19pt;
+    margin-top: -15px;
     padding-left: 202px;
     margin-left: 74px;
 }
 
-header aside nav {
+header aside:first-child nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 12px;
+    padding-top: 12px;    
+    margin-left: -150px;
 }
 
-header aside nav a {
+header aside:first-child nav a {
     width: 50px; 
     height: 50px; 
     background: #444444; 
     margin: 8px;
 }
 
-header aside nav a:hover {
+header aside:first-child nav a:hover {
     width: 50px; 
     height: 50px; 
     background: #2fd072; 
 }
 
 header aside:nth-child(2) {
+    grid-area: imagem;
     display: flex;
     align-items: flex-end;
 }
 
 header aside:nth-child(2) img {
     width: 87%;
+}
+
+@media (max-width: 769px) {
+    
+    header {
+        background-color: azure;   
+        background-image: none;  
+    }
+
+    header aside:nth-child(2) {
+        display: none;
+    }
+    
+    header aside:first-child {
+        display: flex;
+
+    }
 }
