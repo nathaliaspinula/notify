@@ -15,7 +15,7 @@ body {
                          'section2 '
                          'section3'
                          'footer';
-    grid-template-rows: 84vh 51vh 30vh 40vh 10vh;
+    grid-template-rows: 84vh 51vh 70vh 40vh 10vh;
     font-family: 'Lato', sans-serif;
 }
 
@@ -44,6 +44,33 @@ body section:nth-child(2) div div.circle {
 body section:nth-child(3) {
     grid-area: section2;
     background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+body section:nth-child(3) aside div {
+    width: 50%;
+    margin-left: 169px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+    
+
+body section:nth-child(3) aside div input {
+    border-radius: 5px;
+    width: 70%;
+    height:40px;
+}
+
+body section:nth-child(3) aside div button {
+    height: 46px;
+    width: 72px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #2fd072;
 }
 
 header {
@@ -90,5 +117,3 @@ header aside:nth-child(2) {
 header aside:nth-child(2) img {
     width: 87%;
 }
-
-
