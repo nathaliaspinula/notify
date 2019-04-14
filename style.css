@@ -10,13 +10,12 @@
 body {
     margin: 0;
     display: grid;
-    grid-template-areas: 'header header header'
-                         'section section section'
-                         'section2 section2 section2'
-                         'section3 section3 section3'
-                         'footer footer footer';
-    grid-template-rows: 83vh 45vh 57vh 63vh 18vh;
-    grid-template-columns: 34vw 34vw 31vw;
+    grid-template-areas: 'header'
+                        'section'
+                        'section2 '
+                        'section3'
+                        'footer';
+    grid-template-rows: 79vh 51vh 70vh 40vh 10vh;
     font-family: 'Lato', sans-serif;
 }
 
@@ -36,9 +35,18 @@ body section:nth-child(2) div {
     align-items: center;
 }
 
+body section:nth-child(2) div:first-child {
+    margin-left: 169px;
+}
+
+body section:nth-child(2) div:last-child {
+    margin-right: 169px;
+}
+
 body section:nth-child(2) div div.circle {
     width: 85px; 
     height: 85px; 
+    margin: 0px;
     background: #2fd072; 
 }
 
@@ -46,30 +54,33 @@ body section:nth-child(3) {
     grid-area: section2;
     background-color: #e3e3e3;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
 
-body section:nth-child(3) aside div {
+body section:nth-child(3) aside:first-child div {
     width: 50%;
     margin-left: 169px;
     justify-content: space-around;
     flex-direction: column;
+    align-items: center;
     font-size: 15pt;
 }
     
 
-body section:nth-child(3) aside div input {
+body section:nth-child(3) aside:first-child div input {
     border-radius: 5px;
     width: 70%;
-    height:40px;
+    height: 40px;
+    padding: 5px;
 }
 
-body section:nth-child(3) aside div button {
-    height: 46px;
+body section:nth-child(3) aside:first-child div button {
+    height: 52px;
     width: 72px;
-    margin: 0;
+    margin: -14px;
     padding: 0;
     border-radius: 0px 10px 10px 0px;
     background-color: #2fd072;
@@ -77,9 +88,50 @@ body section:nth-child(3) aside div button {
     color: #ffffff;
 }
 
+body section:nth-child(3) aside:nth-child(2) div {
+    width: 50%;
+    margin-right: 169px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15pt;
+}
+
+body section:nth-child(4) {
+    grid-area: section3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body section:nth-child(4) div {
+    margin: 0px 169px 0px 169px; 
+}
+
+footer {
+    grid-area: footer;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer div a {
+    text-decoration: none;
+    color: grey;
+    margin: 10px;
+}
+
+footer div a:hover {
+    color: #2fd072;
+}
+
 header {
     grid-area: header;
     background-image: url(imagens/banner.png);
+    background-size: cover;
     display: flex;
     justify-content: center;
     border-top: 8px solid;
@@ -93,21 +145,32 @@ header aside:first-child  {
     grid-area: logo;
     color: white;
     display: flex;
+    flex-direction: column;
     align-content: center;
     justify-items: center;
 }
 
-header aside:first-child div{
+header aside div:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+header aside:first-child div div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header aside:first-child div div:nth-child(2){
+    width: 85%;
 }
 
 header aside div div h1 {
     font-family: 'Pacifico', cursive;
-    font-size: 55pt;
+    font-size: 36pt;
     font-weight: inherit;
-    width: 105px;
     margin-left: -77px;
     margin-top: 129px;
     margin-block-end: 32px;
@@ -123,14 +186,11 @@ header aside div div h2 {
     margin-block-end: 0;
     margin-block-start: 0;
     font-size: 16.9pt;
-    width: 450px;
     padding-left: 202px;
     margin-left: 74px;
 }
 
 header aside nav {
-    height: 60px;
-    width: 178px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,6 +201,7 @@ header aside nav a {
     width: 50px; 
     height: 50px; 
     background: #444444; 
+    margin: 8px;
 }
 
 header aside nav a:hover {
