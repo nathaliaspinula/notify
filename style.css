@@ -12,6 +12,7 @@ body {
     display: grid;
     grid-template-areas: 'header''section''section2 ''section3''footer';
     grid-template-rows: 79vh 51vh 70vh 60vh 10vh;
+    grid-template-columns: 100vw;
     font-family: 'Lato', sans-serif;
 }
 
@@ -258,18 +259,112 @@ header aside:nth-child(2) img {
 }
 
 @media (max-width: 769px) {
-    
-    header {
-        background-color: azure;   
-        background-image: none;  
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-areas: "header"
+                             "section"
+                             "section2"
+                             "section3"
+                             "footer";
+        grid-template-rows: 70vh 80vh 25vh 75vh 50vh;
     }
 
-    header aside:nth-child(2) {
+    body section:nth-child(2),
+    body section:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+    }
+
+    header {
+        grid-area: header;
+        background-color: rgb(59, 59, 59);   
+        background-image: none;  
+        display: flex;
+        flex-direction: column;
+    }
+
+    header aside:nth-child(2),
+    body section:nth-child(3) aside:nth-child(2),
+    body section:nth-child(4) div:nth-child(2) {
         display: none;
     }
-    
-    header aside:first-child {
-        display: flex;
 
+    body section:nth-child(2) div,
+    body section:nth-child(3) aside:first-child {
+        margin: 0px !important;
+        padding: 12px;
+    }
+
+    header aside:first-child div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header aside:first-child div div:first-child h1,
+    header aside:first-child div div:nth-child(2) h2,
+    header aside:first-child div:first-child,
+    header aside:first-child nav {
+        margin-top: 0px;
+        margin-block-end: 0px;
+        margin-left: 0px;
+        padding: 0px;
+    }    
+
+    header aside:first-child {
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-areas: "header"
+                             "section"
+                             "section2"
+                             "section3"
+                             "footer";
+        grid-template-rows: 62vh 150vh 70vh 75vh 50vh;
+    }
+
+    body section:nth-child(3) aside:first-child div:first-child {
+        margin: 0px !important;
+        padding: 12px;
+    }
+
+    body section:nth-child(2) div div.circle {
+        width: 50px;
+        height: 50px; 
+    }
+
+    body section:nth-child(3) aside:first-child div input {
+        width: 121px;
+    }
+
+    body section:nth-child(3) aside:first-child div div button {
+        width: 70px;
+    }
+
+    body section:nth-child(4) div:first-child {
+        display: none;
+    }
+
+    footer div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
